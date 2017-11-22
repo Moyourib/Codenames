@@ -1,0 +1,162 @@
+[debug] [2017-11-21T21:13:57.115Z] ----------------------------------------------------------------------
+[debug] [2017-11-21T21:13:57.118Z] Command:       /usr/local/bin/node /Users/moyouribhattacharjee/Desktop/Codenames/node_modules/.bin/firebase serve --only functions,hosting
+[debug] [2017-11-21T21:13:57.119Z] CLI Version:   3.15.2
+[debug] [2017-11-21T21:13:57.119Z] Platform:      darwin
+[debug] [2017-11-21T21:13:57.119Z] Node Version:  v7.10.1
+[debug] [2017-11-21T21:13:57.119Z] Time:          Tue Nov 21 2017 16:13:57 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:57.119Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-21T21:13:57.133Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-21T21:13:57.133Z] > authorizing via signed-in user
+[debug] [2017-11-21T21:13:57.136Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:13:57 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:58.111Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:13:58.112Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/aicodenamesplayer/tokens  
+ Tue Nov 21 2017 16:13:58 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:58.662Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/moyouribhattacharjee/Desktop/Codenames'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-11-21T21:13:59.007Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/aicodenamesplayer  
+ Tue Nov 21 2017 16:13:59 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:59.008Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/aicodenamesplayer/apiKeys  
+ Tue Nov 21 2017 16:13:59 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:59.008Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:13:59 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:59.336Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:13:59.337Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/22015414454/clients/_:getWebAppConfig  
+ Tue Nov 21 2017 16:13:59 GMT-0500 (EST)
+[debug] [2017-11-21T21:13:59.339Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:13:59.374Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:14:00.035Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2017-11-21T21:14:00.055Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:14:00 GMT-0500 (EST)
+[debug] [2017-11-21T21:14:00.322Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:14:00.323Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/22015414454/clients/_:getWebAppConfig  
+ Tue Nov 21 2017 16:14:00 GMT-0500 (EST)
+[debug] [2017-11-21T21:14:01.155Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5004
+
+[debug] [2017-11-21T21:16:05.412Z] ----------------------------------------------------------------------
+[debug] [2017-11-21T21:16:05.416Z] Command:       /usr/local/bin/node /Users/moyouribhattacharjee/Desktop/Codenames/node_modules/.bin/firebase serve --only functions,hosting
+[debug] [2017-11-21T21:16:05.416Z] CLI Version:   3.15.2
+[debug] [2017-11-21T21:16:05.416Z] Platform:      darwin
+[debug] [2017-11-21T21:16:05.417Z] Node Version:  v7.10.1
+[debug] [2017-11-21T21:16:05.417Z] Time:          Tue Nov 21 2017 16:16:05 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:05.417Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-21T21:16:05.434Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-21T21:16:05.435Z] > authorizing via signed-in user
+[debug] [2017-11-21T21:16:05.438Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:05 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:05.795Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:05.797Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/aicodenamesplayer/tokens  
+ Tue Nov 21 2017 16:16:05 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:06.390Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/moyouribhattacharjee/Desktop/Codenames'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-11-21T21:16:06.836Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:06 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:06.837Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/aicodenamesplayer/apiKeys  
+ Tue Nov 21 2017 16:16:06 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:06.838Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:06 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:07.079Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:07.091Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:07.092Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/22015414454/clients/_:getWebAppConfig  
+ Tue Nov 21 2017 16:16:07 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:07.168Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:07.375Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-11-21T21:16:37.289Z] ----------------------------------------------------------------------
+[debug] [2017-11-21T21:16:37.291Z] Command:       /usr/local/bin/node /Users/moyouribhattacharjee/Desktop/Codenames/node_modules/.bin/firebase serve --only functions,hosting
+[debug] [2017-11-21T21:16:37.292Z] CLI Version:   3.15.2
+[debug] [2017-11-21T21:16:37.292Z] Platform:      darwin
+[debug] [2017-11-21T21:16:37.292Z] Node Version:  v7.10.1
+[debug] [2017-11-21T21:16:37.292Z] Time:          Tue Nov 21 2017 16:16:37 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:37.293Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-21T21:16:37.304Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-21T21:16:37.305Z] > authorizing via signed-in user
+[debug] [2017-11-21T21:16:37.307Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:37 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:37.718Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:37.719Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/aicodenamesplayer/tokens  
+ Tue Nov 21 2017 16:16:37 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:38.137Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/moyouribhattacharjee/Desktop/Codenames'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-11-21T21:16:38.411Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:38 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:38.412Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/aicodenamesplayer/apiKeys  
+ Tue Nov 21 2017 16:16:38 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:38.413Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:38 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:38.685Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:38.724Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:38.724Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/22015414454/clients/_:getWebAppConfig  
+ Tue Nov 21 2017 16:16:38 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:38.771Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:39.160Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2017-11-21T21:16:39.178Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aicodenamesplayer  
+ Tue Nov 21 2017 16:16:39 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:39.351Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-21T21:16:39.352Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/22015414454/clients/_:getWebAppConfig  
+ Tue Nov 21 2017 16:16:39 GMT-0500 (EST)
+[debug] [2017-11-21T21:16:39.637Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5004
+
+[debug] [2017-11-22T18:40:48.475Z] ----------------------------------------------------------------------
+[debug] [2017-11-22T18:40:48.479Z] Command:       /usr/local/bin/node /Users/moyouribhattacharjee/Desktop/Codenames/node_modules/.bin/firebase serve --only functions,hosting
+[debug] [2017-11-22T18:40:48.479Z] CLI Version:   3.15.2
+[debug] [2017-11-22T18:40:48.480Z] Platform:      darwin
+[debug] [2017-11-22T18:40:48.480Z] Node Version:  v7.10.1
+[debug] [2017-11-22T18:40:48.480Z] Time:          Wed Nov 22 2017 13:40:48 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:48.480Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-22T18:40:48.496Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-22T18:40:48.496Z] > authorizing via signed-in user
+[debug] [2017-11-22T18:40:48.499Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-22T18:40:48.499Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/4KnB9Gk-aYyClFoUX3mFaWkfkPHg4pz20ljfvy4HJpQ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Nov 22 2017 13:40:48 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:48.674Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T18:40:48.681Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/aicodenamesplayer  
+ Wed Nov 22 2017 13:40:48 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:51.169Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T18:40:51.170Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/aicodenamesplayer/tokens  
+ Wed Nov 22 2017 13:40:51 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:52.402Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/moyouribhattacharjee/Desktop/Codenames'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-11-22T18:40:52.895Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/aicodenamesplayer  
+ Wed Nov 22 2017 13:40:52 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:52.896Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/aicodenamesplayer/apiKeys  
+ Wed Nov 22 2017 13:40:52 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:52.896Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/aicodenamesplayer  
+ Wed Nov 22 2017 13:40:52 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:53.164Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T18:40:53.165Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/22015414454/clients/_:getWebAppConfig  
+ Wed Nov 22 2017 13:40:53 GMT-0500 (EST)
+[debug] [2017-11-22T18:40:53.213Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T18:40:53.257Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-22T18:40:53.530Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
