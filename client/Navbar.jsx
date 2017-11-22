@@ -9,7 +9,7 @@ const Navbar = (props) => {
     <nav>
       <img src={stack} className="hamburger" />
       <Link to="/"><h1>CODENAMES</h1></Link>
-      <div className="login"}>
+      <div className="login">
         log in
       </div>
     </nav>

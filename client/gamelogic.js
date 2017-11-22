@@ -9,7 +9,7 @@ export const createCard = (array, color) => {
 
 export const randomWord = () => wordlist[Math.floor(Math.random()*400)]
 
-export const makeGame => () {
+export const makeGame = () => {
   const startingColor = Math.round(Math.random()) ? "red" : "blue"
   const cards = []
   cards.push(createCard(cards, "black"))

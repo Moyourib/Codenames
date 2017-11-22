@@ -27,17 +27,4 @@ const App = () => {
 
 //index redirect here? ^^^^^^^^
 
-const mapState = state => ({
-  currentUser:state.currentUser
-})
-
-const mapDispatch = dispatch => ({
-  checkUser () {
-    auth.onAuthStateChanged(user => {
-      if (user) dispatch({type: SET_USER, user})
-    })
-  },
-})
-
-
 export default App

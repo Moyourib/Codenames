@@ -41,7 +41,6 @@ const turn = function (state="", action) {
     case "CHANGE_TURN":
       return state==="red" ? "blue":"red"
     default:
-      console.log("default")
       return state
 
   }
