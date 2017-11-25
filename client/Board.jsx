@@ -4,7 +4,7 @@ import Card from './Card.jsx'
 import stack from '../public/stack.png'
 import {db} from '../fire'
 
-class Main extends Component {
+class Board extends Component {
 
   componentDidMount() {
     const { gameId } = this.props.match.params
@@ -19,7 +19,7 @@ class Main extends Component {
         <div className="board">
         {
           cards.length ? cards.map(word => (<Card key={word.id} word={word} gameId={this.props.match.params.gameId} />)) :
-          <div className="main-container">Searching for game...</div>
+          <div className="main-container">Loading game...</div>
         }
         </div>
       </div>
@@ -59,4 +59,4 @@ const mapDispatch = (dispatch, ownProps) => ({
   }
 })
 
-export default connect(mapState, mapDispatch)(Main)
+export default connect(mapState, mapDispatch)(Board)

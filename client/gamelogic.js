@@ -9,7 +9,7 @@ export const createCard = (array, color) => {
 
 export const randomWord = () => wordlist[Math.floor(Math.random()*400)]
 
-export const makeGame = () => {
+export const makeGame = history => {
   const startingColor = Math.round(Math.random()) ? "red" : "blue"
   const cards = []
   cards.push(createCard(cards, "black"))
@@ -28,6 +28,6 @@ export const makeGame = () => {
     return res.id
   })
   .then(id => {
-    ownProps.history.push("/"+id)
+    history.push("/"+id)
   })
 }

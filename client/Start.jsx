@@ -7,7 +7,7 @@ import UserHome from './UserHome'
 const Start = (props) => {
   return props.user ?
   (
-    <UserHome user={props.user}/>
+    <UserHome user={props.user} history={props.history}/>
   )
   :
   (
