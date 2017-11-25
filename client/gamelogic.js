@@ -12,13 +12,11 @@ export const randomWord = () => wordlist[Math.floor(Math.random()*400)]
 export const makeGame = history => {
   const startingColor = Math.round(Math.random()) ? "red" : "blue"
   const cards = []
-  cards.push(createCard(cards, "black"))
-  cards.push(createCard(cards, startingColor))
-  for(let i=0; i<8; i++){
+    cards.push(createCard(cards, "black"))
+    cards.push(createCard(cards, startingColor))
+  while(cards.length<25){
     cards.push(createCard(cards, "red"))
     cards.push(createCard(cards, "blue"))
-  }
-  while(cards.length<25){
     cards.push(createCard(cards, "white"))
   }
 
