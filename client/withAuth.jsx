@@ -12,8 +12,10 @@ export default Component => class extends React.Component {
     this.unsubscribe && this.unsubscribe()
   }
 
-  createUser = (e) => {console.log("not doing anything right now")}
-  signIn = (e) => auth.signInWithPopup(email)
+  createUser = e => {
+    e.preventDefault()
+    auth.createUserWithEmailAndPassword(e.target.email.value, e.target.password.value)}
+  signIn = e => auth.signInWithEmailAndPassword(e.target.email.value, e.target.password.value)
   signInWithGoogle = () => auth.signInWithPopup(google)
   signOut = () => auth.signOut()
 
@@ -29,6 +31,7 @@ export default Component => class extends React.Component {
       user={user}
       auth={auth}
       signIn={this.signIn}
+      createUser={this.createUser}
       signInWithGoogle={this.signInWithGoogle}
       signOut={this.signOut}
       />
