@@ -1,8 +1,6 @@
 import React from 'react'
 import {auth, google, email} from '~/fire'
 
-window.auth = auth
-
 export default Component => class extends React.Component {
   componentDidMount() {
     this.unsubscribe = auth.onAuthStateChanged(user => this.setState({user}))
@@ -14,8 +12,14 @@ export default Component => class extends React.Component {
 
   createUser = e => {
     e.preventDefault()
-    auth.createUserWithEmailAndPassword(e.target.email.value, e.target.password.value)}
-  signIn = e => auth.signInWithEmailAndPassword(e.target.email.value, e.target.password.value)
+    auth.createUserWithEmailAndPassword(e.target.email.value, e.target.password.value)
+    .catch(err => this.setState({errMessage:err.message}))
+  }
+  signIn = e => {
+    e.preventDefault()
+    auth.signInWithEmailAndPassword(e.target.email.value, e.target.password.value)
+    .catch(err => this.setState({errMessage:err.code}))
+  }
   signInWithGoogle = () => auth.signInWithPopup(google)
   signOut = () => auth.signOut()
 
@@ -24,7 +28,7 @@ export default Component => class extends React.Component {
     if (!this.state) return null
 
     // Get the user off auth.
-    const {user} = this.state
+    const {user, errMessage} = this.state
 
     // Render our nested component with the user.
     return <Component {...this.props}
@@ -34,6 +38,7 @@ export default Component => class extends React.Component {
       createUser={this.createUser}
       signInWithGoogle={this.signInWithGoogle}
       signOut={this.signOut}
+      errMessage={errMessage}
       />
   }
 }

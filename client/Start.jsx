@@ -2,11 +2,9 @@ import React from 'react'
 import withAuth from './withAuth'
 import UserHome from './UserHome'
 
-const Start = (props) => {
+const Start = props => {
   return props.user ?
-  (
-    <UserHome user={props.user} history={props.history}/>
-  )
+  <UserHome user={props.user} history={props.history}/>
   :
   (
     <div className="main-container">
@@ -29,7 +27,12 @@ const Start = (props) => {
           </form>
         </div>
 
+        <div>{props.errMessage}</div>
+
         <div className="button" onClick={props.signInWithGoogle}>Log in with Google!!!</div>
+      </div>
+      <div className="rules-panel">
+      RULES OF THE GAME
       </div>
     </div>
   )

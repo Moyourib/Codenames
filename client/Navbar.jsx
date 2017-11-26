@@ -12,9 +12,9 @@ const Navbar = (props) => {
       <Link to="/"><h1>CODENAMES</h1></Link>
       {
         props.user ?
-        <div onClick={props.signOut}>log out</div>
+        <div className="login" onClick={props.signOut}>log out</div>
         :
-        <div></div>
+        <div className="login"></div>
       }
     </nav>
   )

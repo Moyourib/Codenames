@@ -2,23 +2,30 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Card from './Card.jsx'
 import stack from '../public/stack.png'
-import {db} from '../fire'
+import {db, getCards} from '../fire'
 
 class Board extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      cards: []
+    }
+  }
+
   componentDidMount() {
     const { gameId } = this.props.match.params
-    this.props.loadBoard(gameId)
+    this.setState({cards: getCards(gameId)})
   }
 
   render() {
-    const { cards, changeTurn, turn } = this.props
+    const { cards } = this.state
+
     return(
       <div>
-        <div className={`clue ${turn}`} onClick={changeTurn}>turn: {turn}</div>
         <div className="board">
         {
-          cards.length ? cards.map(word => (<Card key={word.id} word={word} gameId={this.props.match.params.gameId} />)) :
+          cards ? cards.map(word => (<Card handleClick={handleClick} key={word.id} word={word} gameId={this.props.match.params.gameId} />)) :
           <div className="main-container">Loading game...</div>
         }
         </div>
@@ -27,36 +34,15 @@ class Board extends Component {
   }
 }
 
-const mapState = state => ({
-  cards: state.cards,
-  turn: state.turn,
-})
+function handleClick(e){
+  const wordId = e.target.id
+  const { gameId } = ownProps.match.params
+  db.doc(`games/${gameId}/cards/${wordId}`).set({flipped: true}, {merge: true})
+  .then(res => {
+    console.log(res)
+    // dispatch({type:"FLIP_CARD", newCard: res.data()})
+  })
+  .catch(err => console.log(err))
+}
 
-const mapDispatch = (dispatch, ownProps) => ({
-  loadBoard(gameId) {
-    db.doc(`/games/${gameId}`).get()
-    .then(res => {
-      const { turn } = res.data()
-      console.log(turn)
-      dispatch({type:"SET_TURN", turn})
-    })
-
-    db.collection(`games/${gameId}/cards/`).get()
-    .then(querySnapshot => {
-      const cards = []
-      querySnapshot.forEach(doc => {
-        const wordObj = doc.data()
-        wordObj.id = doc.id
-        cards.push(wordObj)
-      })
-      dispatch({type:"SET_CARDS", cards})
-    })
-      // dispatch({type:"SET_CARDS", cards:[{word:"No game found... :*(", flipped: true}]})
-    .catch(err => console.error(err))
-  },
-  changeTurn(e) {
-    dispatch({type:"CHANGE_TURN"})
-  }
-})
-
-export default connect(mapState, mapDispatch)(Board)
+export default Board

@@ -73,6 +73,14 @@ nav{
   flex-flow: wrap;
 }
 
+.rules-panel{
+  background-color: lightgrey;
+  margin-left: 10%;
+  padding: 10%;
+  display:flex;
+  align-content: flex-start;
+}
+
 .card:hover{
   box-shadow: 10px 10px 5px #888888;
 }
@@ -99,4 +107,10 @@ nav{
 
 .check-true {
   height:40%;
+}
+
+.start {
+  background-color: steelblue;
+  width: 20%;
+  color: white;
 }
