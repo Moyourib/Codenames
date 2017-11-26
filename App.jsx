@@ -8,6 +8,7 @@ import store from './client/store'
 import Board from './client/Board'
 import Start from './client/Start'
 import Navbar from './client/Navbar'
+import JoinGame from './client/JoinGame'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Start} />
+            <Route path="/join" component={JoinGame} />
             <Route path="/:gameId" component={Board} />
           </Switch>
         </div>
