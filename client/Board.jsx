@@ -1,36 +1,66 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import stack from '../public/stack.png'
-import {db, getGame, getCards} from '../fire'
+import {db, createEventListener} from '../fire'
+import Sidebar from './Sidebar'
+import {dealCards} from './gamelogic'
 import withAuth from './withAuth'
 
 class Board extends Component {
 
-  componentDidMount() {
-    const { gameId } = this.props.match.params
-    this.props.loadBoard(gameId)
-    console.log(this.props.user.uid)
+  constructor(props){
+    super(props)
+    this.clickCard = this.clickCard.bind(this)
+    this.startGame = this.startGame.bind(this)
   }
 
-  componentWillUnmount() {
+  componentDidMount() {
+    const { gameId } = this.props.match.params
+    const { setCard, setGame, game, user } = this.props
+    createEventListener(gameId, setCard, setGame)
+  }
 
+  componentWillUnmount(){
+    this.props.clearCards()
+  }
+
+  clickCard (e) {
+    const { gameId } = this.props.match.params
+    const cardId = e.target.id
+    db.doc(`games/${gameId}/cards/${cardId}`).update("flipped", true)
+  }
+
+  startGame() {
+    const { gameId } = this.props.match.params
+    const gameInfo = this.props.game
+    gameInfo.status = "In Progress"
+    db.doc(`games/${gameId}`).set(gameInfo)
+    .then(() => {
+      dealCards(this.props.game.turn).forEach(card => db.collection(`games/${gameId}/cards`).add(card))
+    })
   }
 
   render() {
-    const { cards, changeTurn, turn, handleClick } = this.props
+    const { cards, game, setGame } = this.props
+    const cardsArr = []
+    for(let id in cards){cardsArr.push({id, ...cards[id]})}
+
     return(
       <div>
         <div className="board">
         {
-          cards.length ? cards.map(word => (
-            <div key={word.id} id={word.id} onClick={handleClick} className={`card ${word.color}`}>
+          cardsArr.length ? cardsArr.map(word => (
+            <div key={word.id} id={word.id} onClick={this.clickCard} className={`card ${word.color}`}>
               <h2 id={word.id}>{word.word}</h2>
             </div>
           ))
           :
-          <div className="main-container">Loading game...</div>
+          <div>
+            <div onClick={this.startGame} className="button">{game.status=="pending" ? "Start Game" : "searching for game..."}</div>
+          </div>
         }
         </div>
+        <Sidebar setGame={setGame} game={game}/>
       </div>
     )
   }
@@ -38,37 +68,14 @@ class Board extends Component {
 
 const mapState = state => ({
   cards: state.cards,
+  game: state.game
 })
 
 const mapDispatch = (dispatch, ownProps) => ({
-  loadBoard(gameId) {
-    db.collection(`games/${gameId}/cards/`).get()
-    .then(querySnapshot => {
-      const cards = []
-      querySnapshot.forEach(doc => {
-        const card = doc.data()
-        const color = card.flipped && card.color
-        const id = doc.id
-        cards.push({id, color, word:card.word})
-      })
-      dispatch({type:"SET_CARDS", cards})
-    })
-      // dispatch({type:"SET_CARDS", cards:[{word:"No game found... :*(", flipped: true}]})
-    .catch(err => console.error(err))
-  },
-  handleClick(e) {
-    const { gameId } = ownProps.match.params
-    const cardId = e.target.id
-    db.doc(`games/${gameId}/cards/${cardId}`).update("flipped", true)
-    db.doc(`games/${gameId}/cards/${cardId}`).get()
-    .then(res => {
-      const card = {id: res.id, ...res.data()}
-      dispatch({type: "FLIP_CARD", card})
-    })
-  },
-  changeTurn(e) {
-    dispatch({type:"CHANGE_TURN"})
-  }
+  setGame(game) {dispatch({type:"SET_GAME", game})},
+  setCard(id, card) {dispatch({type: "SET_CARD", id, card})},
+  changeTurn(e) {dispatch({type:"CHANGE_TURN"})},
+  clearCards() {dispatch({type: "CLEAR_CARDS"})}
 })
 
 export default connect(mapState, mapDispatch)(withAuth(Board))

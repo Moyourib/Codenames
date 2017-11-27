@@ -12,17 +12,26 @@ export const auth = firebase.auth();
 
 export const db = firebase.firestore()
 
-export const games = db.collection('games')
-
-export const newGame = startingColor =>
-  games.add({players: {}, status: "pending", turn: startingColor })
-
 export const newPlayer = (userId, color, role) => {
   games.doc(players).set({[userId]:{color, role}})
 }
 
-export const getGameRef = gameId => games.doc(gameId)
-
-
-
-export const getCards = gameId => games.doc(gameId).get()
+export const createEventListener = (gameId, setCard, setGame) =>{
+  db.doc(`games/${gameId}`).get()
+  .then(gameSnap => {
+    if(gameSnap.exists){
+      setGame(gameSnap.data())
+      db.collection(`games/${gameId}/cards`).onSnapshot(snap => {
+        snap.docChanges.forEach(change => {
+          const card = change.doc.data()
+          const color = card.flipped && card.color
+          const id = change.doc.id
+          setCard(id, {color, word:card.word})
+        })
+      })
+    }
+    else {
+      setCard(0, {word:"It looks like this game doesn't exist!"})
+    }
+  })
+}

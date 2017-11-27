@@ -1,5 +1,5 @@
 import wordlist from '../wordlist'
-import { db, newGame } from '../fire'
+import { db } from '../fire'
 
 export const createCard = (array, color) => {
   let word = randomWord()
@@ -9,9 +9,7 @@ export const createCard = (array, color) => {
 
 export const randomWord = () => wordlist[Math.floor(Math.random()*400)]
 
-
-//onCreate cloud function ...
-export const dealCards = startingColor => {
+export const dealCards = (startingColor) => {
   const cards = []
     cards.push(createCard(cards, "black"))
     cards.push(createCard(cards, startingColor))
@@ -27,12 +25,15 @@ export const dealCards = startingColor => {
 
 export const makeGame = history => {
   const startingColor = Math.round(Math.random()) ? "red" : "blue"
-  newGame(startingColor)
-  .then(game => {
-    dealCards(startingColor).forEach(card => game.collection("cards").add(card))
-    return game.id
-  })
-  .then(id => {
+  db.collection("games").add({
+    players: [],
+    status: "pending",
+    turn: startingColor,
+    clue: [],
+    redScore: 0,
+    blueScore: 0,
+   })
+  .then(({id}) => {
     history.push("/"+id)
   })
 }

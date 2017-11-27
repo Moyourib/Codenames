@@ -3,21 +3,30 @@ import { createLogger } from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-const cards = function (state = [], action) {
+const cards = (state = {}, action) => {
   switch(action.type){
-    case "FLIP_CARD":
-      return state.map( card =>
-        card.id===action.card.id ? action.card : card
-      )
-    case "SET_CARDS":
-      return action.cards
+    case "SET_CARD":
+      return Object.assign({}, state, {[action.id]:action.card})
+    case "CLEAR_CARDS":
+      return {}
     default:
       return state
   }
 }
 
+const game = (state = {}, action) => {
+  switch(action.type){
+    case "SET_GAME":
+      return action.game
+    default:
+      return state
+  }
+}
+
+
 const reducer = combineReducers({
   cards,
+  game,
 })
 
 const middleware = composeWithDevTools(applyMiddleware(
