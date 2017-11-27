@@ -15,7 +15,7 @@ export const db = firebase.firestore()
 export const games = db.collection('games')
 
 export const newGame = startingColor =>
-  games.add({players: {}, status: "pending", turn: startingColor })
+  games.add({players: [], status: "pending", turn: startingColor })
 
 export const newPlayer = (userId, color, role) => {
   games.doc(players).set({[userId]:{color, role}})
