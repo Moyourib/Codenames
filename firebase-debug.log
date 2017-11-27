@@ -1,0 +1,43 @@
+[debug] [2017-11-27T15:27:42.482Z] ----------------------------------------------------------------------
+[debug] [2017-11-27T15:27:42.485Z] Command:       /usr/local/bin/node /Users/moyouribhattacharjee/Desktop/GraceHopper/Senior/Codenames/node_modules/.bin/firebase serve --only functions,hosting
+[debug] [2017-11-27T15:27:42.485Z] CLI Version:   3.15.2
+[debug] [2017-11-27T15:27:42.485Z] Platform:      darwin
+[debug] [2017-11-27T15:27:42.485Z] Node Version:  v7.10.1
+[debug] [2017-11-27T15:27:42.486Z] Time:          Mon Nov 27 2017 10:27:42 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:42.486Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-27T15:27:42.500Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-27T15:27:42.500Z] > authorizing via signed-in user
+[debug] [2017-11-27T15:27:42.502Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-27T15:27:42.503Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/4KnB9Gk-aYyClFoUX3mFaWkfkPHg4pz20ljfvy4HJpQ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Nov 27 2017 10:27:42 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:42.694Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T15:27:42.701Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/codenames-e2238  
+ Mon Nov 27 2017 10:27:42 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:43.022Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T15:27:43.023Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/codenames-e2238/tokens  
+ Mon Nov 27 2017 10:27:43 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:43.452Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/moyouribhattacharjee/Desktop/GraceHopper/Senior/Codenames'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-11-27T15:27:43.878Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/codenames-e2238  
+ Mon Nov 27 2017 10:27:43 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:43.878Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/codenames-e2238/apiKeys  
+ Mon Nov 27 2017 10:27:43 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:43.878Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/codenames-e2238  
+ Mon Nov 27 2017 10:27:43 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:44.217Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T15:27:44.218Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T15:27:44.218Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/322471736473/clients/_:getWebAppConfig  
+ Mon Nov 27 2017 10:27:44 GMT-0500 (EST)
+[debug] [2017-11-27T15:27:44.552Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-11-27T15:27:45.152Z] <<< HTTP RESPONSE 200
