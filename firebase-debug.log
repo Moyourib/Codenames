@@ -41,3 +41,38 @@
 [info] ✔  hosting: Local server: http://localhost:5000
 
 [debug] [2017-11-27T15:27:45.152Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T16:09:28.620Z] ----------------------------------------------------------------------
+[debug] [2017-11-27T16:09:28.623Z] Command:       /usr/local/bin/node /Users/moyouribhattacharjee/Desktop/GraceHopper/Senior/Codenames/node_modules/.bin/firebase serve --only functions,hosting
+[debug] [2017-11-27T16:09:28.623Z] CLI Version:   3.15.2
+[debug] [2017-11-27T16:09:28.623Z] Platform:      darwin
+[debug] [2017-11-27T16:09:28.623Z] Node Version:  v7.10.1
+[debug] [2017-11-27T16:09:28.624Z] Time:          Mon Nov 27 2017 11:09:28 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:28.624Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-27T16:09:28.637Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-27T16:09:28.637Z] > authorizing via signed-in user
+[debug] [2017-11-27T16:09:28.639Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/codenames-e2238  
+ Mon Nov 27 2017 11:09:28 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:29.025Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T16:09:29.026Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/codenames-e2238/tokens  
+ Mon Nov 27 2017 11:09:29 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:29.430Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/moyouribhattacharjee/Desktop/GraceHopper/Senior/Codenames'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2017-11-27T16:09:29.727Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/codenames-e2238  
+ Mon Nov 27 2017 11:09:29 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:29.727Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/codenames-e2238/apiKeys  
+ Mon Nov 27 2017 11:09:29 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:29.728Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/codenames-e2238  
+ Mon Nov 27 2017 11:09:29 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:29.999Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T16:09:30.083Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T16:09:30.440Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-27T16:09:30.441Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/322471736473/clients/_:getWebAppConfig  
+ Mon Nov 27 2017 11:09:30 GMT-0500 (EST)
+[debug] [2017-11-27T16:09:30.954Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
