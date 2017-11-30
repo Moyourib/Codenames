@@ -20,11 +20,12 @@ const Sidebar = props => {
             role:
             player<input className="switch" name="role" type="radio" value="player" />
             spymaster<input className="switch" name="role" type="radio" value="spymaster" />
+            <input type="submit" />
           </form>
         </div>
       )
       : <div></div>
-      // :<div>Your Team: {props.players[props.user.uid].team} Your Role: {props.players[props.user.uid].role}</div>
+      :<div>Your Team: {props.players[props.user.uid].team} Your Role: {props.players[props.user.uid].role}</div>
     }
       <div className="sidebar-box">
         <HintDisplay />
@@ -36,7 +37,7 @@ const Sidebar = props => {
       <div className="sidebar-box">
         PLAYERS:
         <div>
-        {props.players.map(player => (<div key={player.email} className={player.role+"Team"}>{player.email}</div>))}
+        {props.players.map(player => (player && <div key={player.email} className={player.role+"Team"}>{player.email}</div>))}
         </div>
         <br />
         <br />
@@ -65,6 +66,7 @@ const mapState = state => {
 
 const mapDispatch = (dispatch, ownProps) => ({
   setPlayer(e){
+    e.preventDefault()
     dispatch({type: "SET_PLAYER", id:ownProps.user.uid, team:e.target.team.value, role:e.target.role.value})
   },
   // changeRole(e) {

@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 import { selectCard } from './store'
 
 
-const SpyMaster = ({legend}) => {
+const SpyMaster = () => {
   return (
     <div>
     <div className="board">

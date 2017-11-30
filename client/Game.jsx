@@ -25,9 +25,9 @@ class GameComponent extends React.Component {
 		this.unsubscribe = ref.onSnapshot(snap => {
 			if(snap.exists){
 				const game = snap.data()
-				// console.log('got snapshot:', game)
-				// if (!game.players[this.props.user.uid])
-				// 	this.game.join()
+				console.log('got snapshot:', game)
+				if (!game.players[this.props.user.uid])
+					this.game.join()
 
 				this.setState({game})
 			}
@@ -87,7 +87,11 @@ class GameComponent extends React.Component {
 		const {journal, game, isSpymaster} = this
 		const { user } = this.props
 
-		return <GameProvider journal={journal} onAction={this.onAction}><this.View isSpymaster={isSpymaster} legend={this.state.game.legend} user={user} gameRef={game} /></GameProvider>
+		return (
+			<GameProvider journal={journal} onAction={this.onAction}>
+				<Board isSpymaster={isSpymaster} legend={this.state.game.legend} user={user} gameRef={game} />
+			</GameProvider>
+		)
 	}
 }
 

@@ -10,6 +10,7 @@ import Homepage from './client/Homepage'
 import Navbar from './client/Navbar'
 import Entrance from './client/Entrance'
 import Lobby from './client/Lobby'
+import SpymasterBoard from './client/SpymasterBoard'
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
           <Route exact path="/" component={Entrance} />
           <Route path="/lobby" component={Lobby} />
           <Route path="/home" component={Homepage} />
-          <Route path="/:gameId" component={
+          <Route path="/:gameId/master" component={SpymasterBoard} />
+          <Route exact path="/:gameId" component={
             ({match: {params: {gameId}}, history}) => <Game game={gameById(gameId)} history={history} />
           } />
         </Switch>

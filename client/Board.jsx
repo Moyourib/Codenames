@@ -6,15 +6,17 @@ import withAuth from './withAuth'
 import Sidebar from './Sidebar'
 import { selectCard } from './store'
 import {resetGameStatus, whoGoesFirst} from './gameLogic'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
+import SpymasterBoard from './SpymasterBoard'
 
 
 class Board extends Component {
 
   // componentDidMount(){
-  //   const {joinGameDispatch, gameRef, user} = this.props
+  //   const {players, history, joinGameDispatch, gameRef, user, status} = this.props
   //   joinGameDispatch(user.uid, user.email, "player", whoGoesFirst())
   //   joinGame(gameRef.ref.id)
+  //   if(players[user.uid] && players[user.uid].role==="spymaster" && status!=="pending")
   // }
   //
   // componentWillReceiveProps(nextProps) {
@@ -27,15 +29,22 @@ class Board extends Component {
   // }
 
   checkGameStatus = (status, createClicker) => {
-    const {cards, startGame, history, user, match} = this.props
+    const {gameRef, cards, startGame, history, user, match} = this.props
     const onClick = e => {resetGameStatus(match.params.gameId, history, user.uid)}
     switch(status){
       case 'pending':
         return (<div><div className="button" onClick={startGame}>Start Game!</div><div>remember to set your team and role!</div></div>)
       case "in progress":
-        return cards.map((word, index) => (
-            <Card key={word.word} word={word.word} color={word.color} handleClick={createClicker(index)} />
-          ))
+        return (
+          <div>
+            <Link to={`/${gameRef.ref.id}/master`}><div>Click here for spymaster</div></Link>
+            <div className="board">
+              {cards.map((word, index) => (
+                <Card key={word.word} word={word.word} color={word.color} handleClick={createClicker(index)} />
+              ))}
+            </div>
+          </div>
+        )
       case undefined:
         return (<div className="main-container">waiting for game...</div>)
       default:
@@ -63,14 +72,12 @@ const mapDispatch = (dispatch, ownProps) => ({
   createClicker (index) {
     return () => {
       dispatch({type:"SELECT_CARD", index})
-
     }
   },
   startGame(){
     ownProps.gameRef.ref.get()
     .then(res => {
       const {firstTeam, players} = res.data()
-      console.log(players)
       if(players.length<2) dispatch({type:"SET_STATUS", status:"Not enough players!"})
       else {
         dispatch({type:"START_GAME", players, firstTeam})
